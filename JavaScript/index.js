@@ -405,3 +405,371 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll(); // Initial check
 });
+
+// First, let's add the necessary CSS
+const style = document.createElement("style");
+style.textContent = `
+  .project-slider {
+    position: relative;
+  }
+  
+  .project-card {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .project-card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1000px;
+    height: 80vh;
+    max-height: 800px;
+    z-index: 1000;
+    overflow-y: auto;
+    background-color: var(--bg-secondary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dark-mode .project-card.expanded {
+    background-color: var(--dark-bg-secondary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+  }
+  
+  .project-card.expanded img {
+    height: 300px;
+  }
+  
+  .expanded-content {
+    display: none;
+    padding: 0 2rem 2rem;
+  }
+  
+  .project-card.expanded .expanded-content {
+    display: block;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+  }
+  
+  .dark-mode .close-btn {
+    background-color: var(--dark-accent-color);
+  }
+  
+  .close-btn:hover {
+    background-color: var(--accent-hover);
+  }
+  
+  .dark-mode .close-btn:hover {
+    background-color: var(--dark-accent-hover);
+  }
+  
+  .expand-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .detail-section {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 1.5rem;
+  }
+  
+  .dark-mode .detail-section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .detail-section:last-child {
+    border-bottom: none;
+  }
+  
+  .detail-section h5 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+  }
+  
+  .dark-mode .detail-section h5 {
+    color: var(--dark-accent-color);
+  }
+  
+  .requirement-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .requirement-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .requirement-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+  }
+  
+  .dark-mode .requirement-list li::before {
+    color: var(--dark-accent-color);
+  }
+  
+  .apply-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  
+  .dark-mode .apply-btn {
+    background-color: var(--dark-accent-color);
+  }
+  
+  .apply-btn:hover {
+    background-color: var(--accent-hover);
+  }
+  
+  .dark-mode .apply-btn:hover {
+    background-color: var(--dark-accent-hover);
+  }
+`;
+document.head.appendChild(style);
+
+// Create overlay
+const overlay = document.createElement("div");
+overlay.className = "overlay";
+document.body.appendChild(overlay);
+
+// Add expanded content to each card
+document.querySelectorAll(".project-card").forEach((card, index) => {
+  const cardTitle = card.querySelector("h4").textContent;
+  const cardDesc = card.querySelector("p").textContent;
+  const learnMoreLink = card.querySelector(".opp-link");
+
+  // Create close button
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "close-btn";
+  closeBtn.textContent = "×";
+  closeBtn.style.display = "none";
+  card.appendChild(closeBtn);
+
+  // Create expanded content div
+  const expandedContent = document.createElement("div");
+  expandedContent.className = "expanded-content";
+
+  // Content based on card type
+  let detailHTML = "";
+
+  if (cardTitle.includes("PhD")) {
+    detailHTML = `
+      <div class="expand-details">
+        <div class="detail-section">
+          <h5>Position Overview</h5>
+          <p>We are seeking exceptional PhD candidates to join our research team working on cutting-edge IoT and edge computing technologies. As a PhD researcher in our lab, you will have the opportunity to define and lead innovative research projects with real-world impact.</p>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Research Areas</h5>
+          <p>Our current PhD openings focus on the following areas:</p>
+          <ul class="requirement-list">
+            <li>Edge AI and Machine Learning for IoT applications</li>
+            <li>Energy-efficient protocols for IoT networks</li>
+            <li>Secure and privacy-preserving edge computing</li>
+            <li>Distributed sensing and actuation systems</li>
+            <li>Human-centered IoT system design</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Requirements</h5>
+          <ul class="requirement-list">
+            <li>Master's degree in Computer Science, Electrical Engineering, or related field</li>
+            <li>Strong programming skills and system development experience</li>
+            <li>Background in at least one of our research areas</li>
+            <li>Excellent communication skills and ability to work in a team</li>
+            <li>Passion for pushing the boundaries of technology</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Benefits</h5>
+          <ul class="requirement-list">
+            <li>Competitive stipend and benefits package</li>
+            <li>Travel support for conferences</li>
+            <li>Access to state-of-the-art research equipment and facilities</li>
+            <li>Collaboration opportunities with industry partners</li>
+            <li>Mentorship from leading researchers in the field</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h5>How to Apply</h5>
+          <p>Applications are accepted on a rolling basis. Please submit your CV, research statement, and academic transcripts through our online application system.</p>
+          <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+      </div>
+    `;
+  } else if (cardTitle.includes("Industry")) {
+    detailHTML = `
+      <div class="expand-details">
+        <div class="detail-section">
+          <h5>Partnership Overview</h5>
+          <p>Our lab offers multiple avenues for industry collaboration, from sponsored research projects to technology licensing. We work closely with partners to identify challenges where our expertise can drive innovation and create value.</p>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Partnership Models</h5>
+          <ul class="requirement-list">
+            <li><strong>Sponsored Research:</strong> Fund specific research aligned with your company's goals</li>
+            <li><strong>Joint Development:</strong> Collaborate on co-developed technologies and IP</li>
+            <li><strong>Technology Licensing:</strong> License our lab's innovations for commercial use</li>
+            <li><strong>Consulting Services:</strong> Engage our researchers to solve specific challenges</li>
+            <li><strong>Student Recruitment:</strong> Connect with top talent trained in cutting-edge methods</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Industry Focus Areas</h5>
+          <ul class="requirement-list">
+            <li>Smart manufacturing and Industry 4.0</li>
+            <li>Smart buildings and energy management</li>
+            <li>Healthcare IoT and remote monitoring</li>
+            <li>Agricultural technology and precision farming</li>
+            <li>Smart cities and urban infrastructure</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Benefits of Partnership</h5>
+          <ul class="requirement-list">
+            <li>Access to specialized expertise and research infrastructure</li>
+            <li>Early insights into emerging technologies</li>
+            <li>Custom solutions for industry-specific challenges</li>
+            <li>Opportunities to influence research directions</li>
+            <li>Enhanced R&D capabilities without building internal teams</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Contact Us</h5>
+          <p>To explore partnership opportunities, please reach out to our Industry Relations office. We'll arrange an initial consultation to discuss your needs and potential collaboration models.</p>
+          <a href="#" class="apply-btn">Request Information</a>
+        </div>
+      </div>
+    `;
+  } else if (cardTitle.includes("Internships")) {
+    detailHTML = `
+      <div class="expand-details">
+        <div class="detail-section">
+          <h5>Internship Program</h5>
+          <p>Our research internship program offers undergraduate and graduate students hands-on experience working alongside experienced researchers on meaningful projects. Internships typically run for 3-6 months, with both summer and semester options available.</p>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Available Projects</h5>
+          <ul class="requirement-list">
+            <li>Developing edge AI applications for environmental monitoring</li>
+            <li>Implementing secure communication protocols for IoT devices</li>
+            <li>Building data visualization tools for complex sensor networks</li>
+            <li>Testing energy harvesting technologies for perpetual IoT operations</li>
+            <li>Designing user interfaces for IoT management systems</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Eligibility</h5>
+          <ul class="requirement-list">
+            <li>Currently enrolled in an undergraduate or graduate program</li>
+            <li>Background in computer science, electrical engineering, or related fields</li>
+            <li>Coursework or experience in programming, networks, or embedded systems</li>
+            <li>Strong problem-solving skills and attention to detail</li>
+            <li>Ability to work in a collaborative research environment</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h5>What You'll Gain</h5>
+          <ul class="requirement-list">
+            <li>Practical research experience in a cutting-edge field</li>
+            <li>Mentorship from faculty and senior researchers</li>
+            <li>Exposure to academic and industry collaboration</li>
+            <li>Opportunity to contribute to publications</li>
+            <li>Stipend support for qualifying positions</li>
+          </ul>
+        </div>
+        
+        <div class="detail-section">
+          <h5>Apply Now</h5>
+          <p>Applications for summer internships open in January each year. For semester internships, please apply at least 3 months before your desired start date.</p>
+          <a href="#" class="apply-btn">Submit Application</a>
+        </div>
+      </div>
+    `;
+  }
+
+  expandedContent.innerHTML = detailHTML;
+  card.appendChild(expandedContent);
+
+  // Add click event to Learn More link
+  learnMoreLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    card.classList.add("expanded");
+    overlay.style.display = "block";
+    closeBtn.style.display = "flex";
+    document.body.style.overflow = "hidden"; // Prevent scrolling
+  });
+
+  // Add click event to close button
+  closeBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    card.classList.remove("expanded");
+    overlay.style.display = "none";
+    closeBtn.style.display = "none";
+    document.body.style.overflow = "auto"; // Restore scrolling
+  });
+
+  // Close expanded card when clicking on overlay
+  overlay.addEventListener("click", function () {
+    const expandedCard = document.querySelector(".project-card.expanded");
+    if (expandedCard) {
+      expandedCard.classList.remove("expanded");
+      expandedCard.querySelector(".close-btn").style.display = "none";
+      overlay.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  });
+});

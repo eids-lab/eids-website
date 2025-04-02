@@ -384,105 +384,7 @@ body.dark-mode {
   width: 100%;
 }
 
-/* Publications Section */
-.publications-section {
-  padding: 4rem 5%;
-  background-color: var(--bg-primary);
-}
-
-.dark-mode .publications-section {
-  background-color: var(--dark-bg-primary);
-}
-
-.publications-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.publication-item {
-  display: flex;
-  gap: 2rem;
-  padding: 1.5rem;
-  background-color: var(--bg-secondary);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.dark-mode .publication-item {
-  background-color: var(--dark-bg-secondary);
-}
-
-.publication-item:hover {
-  transform: translateX(10px);
-}
-
-.pub-year {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-color);
-  min-width: 70px;
-}
-
-.dark-mode .pub-year {
-  color: var(--dark-accent-color);
-}
-
-.pub-details h4 {
-  margin-bottom: 0.5rem;
-}
-
-.pub-authors {
-  color: var(--text-secondary);
-  font-style: italic;
-  margin-bottom: 0.3rem;
-}
-
-.dark-mode .pub-authors {
-  color: var(--dark-text-secondary);
-}
-
-.pub-venue {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.pub-link {
-  display: inline-block;
-  color: var(--accent-color);
-  font-weight: 600;
-  text-decoration: none;
-  position: relative;
-}
-
-.dark-mode .pub-link {
-  color: var(--dark-accent-color);
-}
-
-.pub-link::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--accent-color);
-  transition: width 0.3s ease;
-}
-
-.dark-mode .pub-link::after {
-  background-color: var(--dark-accent-color);
-}
-
-.pub-link:hover::after {
-  width: 100%;
-}
-
 /* Footer */
-
 .dark-mode .footer {
   background-color: var(--dark-bg-secondary);
 }
@@ -712,7 +614,7 @@ body.dark-mode {
 .contact_us-section {
   padding: 4rem 5%;
   /* margin: 2rem 5%; */
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
 }
 .section-title {
   font-size: 2rem;
@@ -1464,4 +1366,16 @@ textarea:focus::placeholder {
     var(--dark-accent-color),
     var(--dark-accent-hover)
   );
+}
+
+.info-cards-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-cards-row .info-card {
+  flex: 1;
+  min-width: 250px;
 }

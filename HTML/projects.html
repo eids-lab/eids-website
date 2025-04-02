@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/projects.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="/eids_logo.svg" alt="Lab Logo" class="logo">
+            <h1 class="lab-name">Edge Intelligence & Distributed System</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <!-- <li><a href="#about" class="nav-link">About</a></li> -->
+                <li><a href="team_members.html" class="nav-link" tartget="_self">Members</a></li>
+                <li><a href="#" class="nav-link">Projects</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+            </ul>
+        </nav>
+        <div class="theme-toggle">
+            <!-- <label class="theme-switch-label">
+              <input type="checkbox" id="theme-switch" class="theme-switch">
+              <span class="slider"></span>
+            </label> -->
+        </div>  
+    </header>
+
+    <main class="projects-container">
+        <h2 class="section-title">Our Research Projects</h2>
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card" data-category="ongoing">
+                <div class="project-card-inner">
+                    <div class="project-image-container">
+                        <img src="/api/placeholder/300/200" alt="Project 1" class="project-image">
+                        <h3 class="project-title">Machine Learning for Genomics</h3>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tabs">
+                            <button class="tab-btn active" data-tab="overview">Overview</button>
+                            <button class="tab-btn" data-tab="objectives">Objectives</button>
+                            <button class="tab-btn" data-tab="team">Team</button>
+                            <button class="tab-btn" data-tab="publications">Publications</button>
+                        </div>
+                        <div class="tab-content active" id="overview">
+                            <p>This project focuses on developing novel machine learning algorithms for genomic data analysis, with applications in disease prediction and personalized medicine.</p>
+                        </div>
+                        <div class="tab-content" id="objectives">
+                            <ul>
+                                <li>Develop scalable algorithms for processing large genomic datasets</li>
+                                <li>Create interpretable machine learning models for clinical applications</li>
+                                <li>Validate results through collaboration with medical institutions</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="team">
+                            <p><strong>Principal Investigator:</strong> Dr. Jane Smith</p>
+                            <p><strong>Research Assistants:</strong> John Doe, Emma Wilson</p>
+                            <p><strong>Student Researchers:</strong> 3 PhD, 2 Masters</p>
+                        </div>
+                        <div class="tab-content" id="publications">
+                            <p>1. Smith, J. et al. (2024). "Novel deep learning approach for genomic analysis."</p>
+                            <p>2. Wilson, E. & Smith, J. (2023). "Interpretable machine learning for clinical genomics."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card" data-category="completed">
+                <div class="project-card-inner">
+                    <div class="project-image-container">
+                        <img src="/api/placeholder/300/200" alt="Project 2" class="project-image">
+                        <h3 class="project-title">Quantum Computing Algorithms</h3>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tabs">
+                            <button class="tab-btn active" data-tab="overview-2">Overview</button>
+                            <button class="tab-btn" data-tab="objectives-2">Objectives</button>
+                            <button class="tab-btn" data-tab="team-2">Team</button>
+                            <button class="tab-btn" data-tab="publications-2">Publications</button>
+                        </div>
+                        <div class="tab-content active" id="overview-2">
+                            <p>Research on quantum algorithms for solving computationally intensive problems, with focus on optimization and cryptography applications.</p>
+                        </div>
+                        <div class="tab-content" id="objectives-2">
+                            <ul>
+                                <li>Design quantum algorithms with provable speedup over classical alternatives</li>
+                                <li>Simulate quantum algorithms on classical hardware</li>
+                                <li>Implement and test on quantum computing testbeds</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="team-2">
+                            <p><strong>Principal Investigator:</strong> Dr. Robert Chen</p>
+                            <p><strong>Research Assistants:</strong> Sarah Johnson, Michael Lee</p>
+                            <p><strong>Student Researchers:</strong> 2 PhD, 3 Undergrad</p>
+                        </div>
+                        <div class="tab-content" id="publications-2">
+                            <p>1. Chen, R. & Johnson, S. (2024). "Efficient quantum algorithms for graph problems."</p>
+                            <p>2. Lee, M. et al. (2023). "Quantum simulation of molecular structures."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more project cards as needed -->
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="/api/placeholder/150/150" alt="IoT Lab Logo" class="footer-img">
+            <p>Innovative IoT Research Laboratory</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Navigate</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="index.html">Research</a></li>
+                <li><a href="team_members.html">Team</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="index.html">Opportunities</a></li>
+                <li><a href="index.html">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Connect</h4>
+              <ul>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">ResearchGate</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Edge  Intelligenct & Distributed Sytstems. All rights reserved.</p>
+          <div class="university-affiliation">
+            <p>Affiliated with the Department of Computer Science and Engineering</p>
+          </div>
+        </div>
+      </footer>
+
+    <script src="../JavaScript/projects.js"></script>
+</body>
+</html>
