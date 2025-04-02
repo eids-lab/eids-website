@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Opportunities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/opportunities.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="/eids_logo.svg" alt="Lab Logo" class="logo">
+            <h1 class="lab-name">Edge Intelligence & Distributed System</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="team_members.html" class="nav-link" tartget="_self">Members</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="#" class="nav-link">Opportunities</a></li>
+            </ul>
+        </nav>
+        <div class="theme-toggle">
+            <!-- <label class="theme-switch-label">
+              <input type="checkbox" id="theme-switch" class="theme-switch">
+              <span class="slider"></span>
+            </label> -->
+        </div>  
+    </header>
+
+    <main class="opportunities-container">
+        <h2 class="section-title">Research & Job Opportunities</h2>
+        <!-- <div class="opportunities-filter">
+            <button class="filter-btn active" data-filter="all">All Opportunities</button>
+            <button class="filter-btn" data-filter="research">Research Positions</button>
+            <button class="filter-btn" data-filter="internship">Internships</button>
+            <button class="filter-btn" data-filter="fellowship">Fellowships</button>
+        </div> -->
+
+        <div class="opportunities-grid">
+            <!-- Opportunity Card 1 -->
+            <div class="opportunity-card" data-category="research">
+                <div class="opportunity-card-inner">
+                    <div class="opportunity-image-container">
+                        <img src="/api/placeholder/300/200" alt="PhD Position" class="opportunity-image">
+                        <h3 class="opportunity-title">PhD Position in ML for IoT</h3>
+                    </div>
+                    <div class="opportunity-content">
+                        <div class="opportunity-tabs">
+                            <button class="tab-btn active" data-tab="overview">Overview</button>
+                            <button class="tab-btn" data-tab="requirements">Requirements</button>
+                            <button class="tab-btn" data-tab="benefits">Benefits</button>
+                            <button class="tab-btn" data-tab="application">How to Apply</button>
+                        </div>
+                        <div class="tab-content active" id="overview">
+                            <p>We are seeking a highly motivated PhD student to work on machine learning solutions for IoT applications, with a focus on edge computing and distributed systems.</p>
+                            <p><strong>Application Deadline:</strong> May 15, 2025</p>
+                            <p><strong>Start Date:</strong> September 2025</p>
+                        </div>
+                        <div class="tab-content" id="requirements">
+                            <ul>
+                                <li>MSc in Computer Science, Electrical Engineering, or related field</li>
+                                <li>Strong background in machine learning and distributed systems</li>
+                                <li>Programming experience in Python and/or C++</li>
+                                <li>Experience with ML frameworks (TensorFlow, PyTorch)</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="benefits">
+                            <ul>
+                                <li>Full tuition coverage</li>
+                                <li>Competitive stipend ($30,000/year)</li>
+                                <li>Conference travel funding</li>
+                                <li>Access to state-of-the-art computing resources</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="application">
+                            <p>To apply, please send the following to <strong>applications@eids-lab.org</strong>:</p>
+                            <ul>
+                                <li>CV/Resume</li>
+                                <li>Research statement (max 2 pages)</li>
+                                <li>Academic transcripts</li>
+                                <li>Contact information for 2-3 references</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity Card 2 -->
+            <div class="opportunity-card" data-category="internship">
+                <div class="opportunity-card-inner">
+                    <div class="opportunity-image-container">
+                        <img src="/api/placeholder/300/200" alt="Summer Internship" class="opportunity-image">
+                        <h3 class="opportunity-title">Summer Research Internship</h3>
+                    </div>
+                    <div class="opportunity-content">
+                        <div class="opportunity-tabs">
+                            <button class="tab-btn active" data-tab="overview-2">Overview</button>
+                            <button class="tab-btn" data-tab="requirements-2">Requirements</button>
+                            <button class="tab-btn" data-tab="benefits-2">Benefits</button>
+                            <button class="tab-btn" data-tab="application-2">How to Apply</button>
+                        </div>
+                        <div class="tab-content active" id="overview-2">
+                            <p>Join our lab for a 12-week summer research internship focused on edge intelligence and distributed systems for IoT applications.</p>
+                            <p><strong>Application Deadline:</strong> March 30, 2025</p>
+                            <p><strong>Duration:</strong> June 1 - August 20, 2025</p>
+                        </div>
+                        <div class="tab-content" id="requirements-2">
+                            <ul>
+                                <li>Currently enrolled undergraduate or graduate student</li>
+                                <li>Background in computer science or electrical engineering</li>
+                                <li>Experience with at least one programming language</li>
+                                <li>Interest in IoT, distributed systems, or machine learning</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="benefits-2">
+                            <ul>
+                                <li>$8,000 stipend for the summer</li>
+                                <li>On-campus housing available</li>
+                                <li>Hands-on research experience</li>
+                                <li>Mentorship from faculty and graduate students</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="application-2">
+                            <p>Apply through our online portal at <strong>eids-lab.org/internships</strong> with:</p>
+                            <ul>
+                                <li>Resume</li>
+                                <li>Statement of interest (500 words max)</li>
+                                <li>Academic transcript (unofficial is acceptable)</li>
+                                <li>One letter of recommendation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity Card 3 -->
+            <div class="opportunity-card" data-category="fellowship">
+                <div class="opportunity-card-inner">
+                    <div class="opportunity-image-container">
+                        <img src="/api/placeholder/300/200" alt="Postdoctoral Fellowship" class="opportunity-image">
+                        <h3 class="opportunity-title">Postdoctoral Fellowship</h3>
+                    </div>
+                    <div class="opportunity-content">
+                        <div class="opportunity-tabs">
+                            <button class="tab-btn active" data-tab="overview-3">Overview</button>
+                            <button class="tab-btn" data-tab="requirements-3">Requirements</button>
+                            <button class="tab-btn" data-tab="benefits-3">Benefits</button>
+                            <button class="tab-btn" data-tab="application-3">How to Apply</button>
+                        </div>
+                        <div class="tab-content active" id="overview-3">
+                            <p>Two-year postdoctoral fellowship position focused on developing novel edge computing algorithms for distributed IoT systems.</p>
+                            <p><strong>Application Deadline:</strong> Rolling basis until filled</p>
+                            <p><strong>Start Date:</strong> Flexible, preferred before August 2025</p>
+                        </div>
+                        <div class="tab-content" id="requirements-3">
+                            <ul>
+                                <li>PhD in Computer Science, Electrical Engineering, or related field</li>
+                                <li>Strong publication record in relevant conferences/journals</li>
+                                <li>Experience with embedded systems and distributed computing</li>
+                                <li>Excellent communication and collaboration skills</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="benefits-3">
+                            <ul>
+                                <li>Salary: $65,000-$75,000 per year based on experience</li>
+                                <li>Comprehensive benefits package</li>
+                                <li>Research and travel budget</li>
+                                <li>Mentorship and career development opportunities</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="application-3">
+                            <p>To apply, email the following to <strong>postdoc@eids-lab.org</strong>:</p>
+                            <ul>
+                                <li>CV with publication list</li>
+                                <li>Research statement (2-3 pages)</li>
+                                <li>Three representative publications</li>
+                                <li>Contact information for three references</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="/api/placeholder/150/150" alt="IoT Lab Logo" class="footer-img">
+            <p>Edge Intelligence & Distributed Systems</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Navigate</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="projects.html">Research</a></li>
+                <li><a href="team_members.html">Team</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="opportunities.html">Opportunities</a></li>
+                <li><a href="index.html">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Connect</h4>
+              <ul>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">ResearchGate</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Edge Intelligence & Distributed Systems. All rights reserved.</p>
+          <div class="university-affiliation">
+            <p>Affiliated with the Department of Computer Science and Engineering</p>
+          </div>
+        </div>
+      </footer>
+
+    <script src="../JavaScript/opportunities.js"></script>
+</body>
+</html>

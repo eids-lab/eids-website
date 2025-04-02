@@ -117,7 +117,7 @@ body.dark-mode {
 /* Research Section */
 .research-section {
   padding: 4rem 5%;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
 }
 
 .dark-mode .research-section {
@@ -188,6 +188,7 @@ body.dark-mode {
   justify-content: space-between;
   padding: 4rem 5%;
   gap: 3rem;
+  background-color: var(--bg-secondary);
 }
 
 .hero-content {
@@ -219,7 +220,7 @@ body.dark-mode {
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease
 }
 
 .btn-primary {
@@ -252,7 +253,7 @@ body.dark-mode {
 .about-section,
 .project-highlights {
   padding: 4rem 5%;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
 }
 
 .dark-mode .about-section,
