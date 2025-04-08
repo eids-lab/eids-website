@@ -471,6 +471,13 @@ body.dark-mode {
   object-fit: cover;
 }
 
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-bottom: 20px;
+}
+
 .footer-logo p {
   font-size: 1.1rem;
   font-weight: 500;
