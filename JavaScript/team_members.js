@@ -1,21 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Team member image placeholder generation
+  // Team member image hover effects only (removed icon generation)
   const memberImgs = document.querySelectorAll(".member-img");
-  const colors = ["#3498db", "#2980b9", "#1abc9c", "#16a085", "#9b59b6"];
-  const icons = ["👨‍💼", "👩‍💼", "👨‍💻", "👩‍💻", "👨‍🏫"];
 
-  memberImgs.forEach((img, index) => {
-    // Create gradient background with team colors
-    img.style.background = `linear-gradient(135deg, ${
-      colors[index % colors.length]
-    }, #ecf0f1)`;
-
-    // Add emoji as placeholder (until real images are added)
-    const icon = document.createElement("span");
-    icon.textContent = icons[index % icons.length];
-    icon.style.fontSize = "3.5rem";
-    img.appendChild(icon);
-
+  memberImgs.forEach((img) => {
     // Add hover effect
     img.addEventListener("mouseenter", function () {
       this.style.transform = "scale(1.08) rotate(5deg)";
@@ -60,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll(); // Initial check
+  revealOnScroll();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -120,4 +107,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll(); // Initial check
+});
+
+// Add this to your JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".member-img img").forEach((img) => {
+    img.onerror = function () {
+      // Replace with default image or placeholder
+      this.src = "../images/default_profile.jpg";
+
+      // Or create a placeholder with initials
+      const memberName =
+        this.closest(".team-member").querySelector(".member-name").textContent;
+      const initials = memberName
+        .split(" ")
+        .map((name) => name[0])
+        .join("");
+      this.style.display = "none";
+
+      const placeholder = document.createElement("div");
+      placeholder.className = "initials-placeholder";
+      placeholder.textContent = initials;
+      this.parentElement.appendChild(placeholder);
+    };
+  });
 });
