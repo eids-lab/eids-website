@@ -3,41 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edge Intelligence & Distributed System Lab</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./CSS/index.css">
+    <meta name="description" content="Edge Intelligence & Distributed Systems Lab - Pioneering IoT, AI, and distributed computing research at IIIT Sri City">
+    <meta name="keywords" content="IoT, Edge Computing, Distributed Systems, AI, Industry 4.0, Smart Manufacturing">
+    <meta name="theme-color" content="#3b82f6">
+    <title>Edge Intelligence & Distributed System Lab | IIIT Sri City</title>
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="./CSS/index.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./eids_logo.png">
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Edge Intelligence & Distributed System Lab">
+    <meta property="og:description" content="Pioneering IoT, AI, and distributed computing research">
+    <meta property="og:image" content="./eids_logo.png">
+    <meta property="og:type" content="website">
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header class="header">
-        <div class="logo-container">
-            <img src="eids_logo.png" alt="Lab Logo" class="logo">
-            <div class="vertical-line"></div>
-            <h1 class="lab-name">Edge Intelligence<br>& Distributed System</h1>
-        </div>
-        <nav class="navigation">
-            <ul>
-                <li><a href="" class="nav-link">Home</a></li>
-                <li><a href="./HTML/team_members.html" class="nav-link" tartget="_self">Members</a></li>
-                <li><a href="./HTML/projects.html" class="nav-link">Projects</a></li>
-                <li><a href="./HTML/publications.html" class="nav-link">Publications</a></li>
-                <li><a href="./HTML/opportunities.html" class="nav-link">Opportunities</a></li>
-            </ul>
-        </nav>
-        <div class="theme-toggle">
-            <!-- <label class="theme-switch-label">
-              <input type="checkbox" id="theme-switch" class="theme-switch">
-              <span class="slider"></span>
-            </label> -->
-        </div>  
-    </header>
+    <!-- Header Component Placeholder -->
+    <div id="header-component"></div>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main id="main" class="main-content">
         <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="hero-content">
@@ -49,7 +48,7 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <img src="/api/placeholder/600/400" alt="IoT and Edge Computing Visualization" class="hero-image">
+                <img src="" alt="IoT and Edge Computing Visualization" class="hero-image">
             </div>
         </section>
 
@@ -86,40 +85,40 @@
             <div class="section-divider"></div>
             </div>
             <div class="research-content">
-            <div class="research-item">
+            <div class="research-item animate-on-scroll stagger-1">
                 <div class="research-icon">
-                <i class="icon-iot"></i>
+                    <i class="fas fa-network-wired"></i>
                 </div>
                 <div class="research-details">
-                <h3>Industrial IoT Systems</h3>
-                <p>Developing next-generation IoT architectures for industrial applications, focusing on reliability, scalability, and security for critical infrastructure.</p>
+                    <h3>Industrial IoT Systems</h3>
+                    <p>Developing next-generation IoT architectures for industrial applications, focusing on reliability, scalability, and security for critical infrastructure.</p>
                 </div>
             </div>
-            <div class="research-item">
+            <div class="research-item animate-on-scroll stagger-2">
                 <div class="research-icon">
-                <i class="icon-ai"></i>
+                    <i class="fas fa-brain"></i>
                 </div>
                 <div class="research-details">
-                <h3>AI at the Edge</h3>
-                <p>Investigating methods to deploy complex machine learning models on resource-constrained edge devices, enabling real-time inference with minimal latency.</p>
+                    <h3>AI at the Edge</h3>
+                    <p>Investigating methods to deploy complex machine learning models on resource-constrained edge devices, enabling real-time inference with minimal latency.</p>
                 </div>
             </div>
-            <div class="research-item">
+            <div class="research-item animate-on-scroll stagger-3">
                 <div class="research-icon">
-                <i class="icon-distributed"></i>
+                    <i class="fas fa-project-diagram"></i>
                 </div>
                 <div class="research-details">
-                <h3>Distributed Computing</h3>
-                <p>Exploring novel approaches to distributed systems that can dynamically adapt to changing network conditions while maintaining robust operation.</p>
+                    <h3>Distributed Computing</h3>
+                    <p>Exploring novel approaches to distributed systems that can dynamically adapt to changing network conditions while maintaining robust operation.</p>
                 </div>
             </div>
-            <div class="research-item">
+            <div class="research-item animate-on-scroll stagger-4">
                 <div class="research-icon">
-                <i class="icon-sustainable"></i>
+                    <i class="fas fa-leaf"></i>
                 </div>
                 <div class="research-details">
-                <h3>Sustainable Technology</h3>
-                <p>Researching energy-efficient computing paradigms and sustainable technological solutions to reduce the environmental impact of modern computing infrastructure.</p>
+                    <h3>Sustainable Technology</h3>
+                    <p>Researching energy-efficient computing paradigms and sustainable technological solutions to reduce the environmental impact of modern computing infrastructure.</p>
                 </div>
             </div>
             </div>
@@ -280,6 +279,7 @@
         </div>
       </footer>
 
+    <script src="./components/header.js"></script>
     <script src="./JavaScript/index.js"></script>
 </body>
 </html>
