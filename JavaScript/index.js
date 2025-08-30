@@ -1,7 +1,3 @@
-// ============================================
-//    MODERN WEBSITE SYSTEM 2024 - COMPLETE
-// ============================================
-
 'use strict';
 
 // Global state management
