@@ -1245,6 +1245,7 @@ input[type="checkbox"] {
 .toggle-icon {
   font-size: 1.5rem;
   color: #3498db;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
@@ -1431,36 +1432,6 @@ textarea:focus::placeholder {
 }
 
 /* Dark Mode Specific Styles for Contact Page */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .info-cards-row {
   display: flex;
@@ -2222,4 +2193,159 @@ textarea:focus::placeholder {
 .progressive-image.loaded .placeholder {
   opacity: 0;
   visibility: hidden;
+}
+
+/* Ensure map inside info-card stays responsive and fits card size */
+.info-card .map-frame {
+    width: 100%;
+    height: 250px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: var(--spacing-3);
+    box-shadow: var(--shadow-sm);
+}
+
+.info-card .map-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Optional: Adjust icon size in Find Us card */
+.info-card .icon-wrapper .fas.fa-map {
+    font-size: 1.8rem;
+}
+
+/* FAQ Styles */
+.faq-section {
+  padding: var(--spacing-16) 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.faq-item {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all var(--duration-300) var(--ease-out);
+}
+
+.faq-item:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--accent-primary);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  cursor: pointer;
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  transition: background var(--duration-200) var(--ease-out);
+}
+
+.faq-question:hover {
+  background: var(--bg-tertiary);
+}
+
+.faq-question h3 {
+  margin: 0;
+}
+
+.toggle-icon {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  min-width: 24px;
+  text-align: center;
+  transition: transform var(--duration-300) var(--ease-out);
+}
+
+.faq-item.active .toggle-icon {
+  transform: rotate(180deg); /* Optional: rotates the icon for better UX */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height var(--duration-300) var(--ease-out),
+              opacity var(--duration-300) var(--ease-out),
+              visibility var(--duration-300) var(--ease-out);
+  padding: 0 var(--spacing-6); /* Padding when expanded */
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.faq-item.active .faq-answer {
+  padding: var(--spacing-4) var(--spacing-6); /* Add padding only when expanded */
+}
+
+/* -------------------------------------------------
+   FAQ – pure CSS + tiny JS (max-height transition)
+   ------------------------------------------------- */
+.faq-section { padding: var(--spacing-16) 5%; max-width: 1200px; margin: 0 auto; }
+
+.faq-container { display: flex; flex-direction: column; gap: var(--spacing-4); }
+
+.faq-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--duration-300) var(--ease-out);
+}
+.faq-item:hover { box-shadow: var(--shadow-sm); }
+
+.faq-question {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: var(--spacing-4) var(--spacing-6);
+  cursor: pointer;
+  font-weight: var(--font-semibold);
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  user-select: none;
+}
+.faq-question:hover { background: var(--bg-tertiary); }
+
+.toggle-icon {
+  font-weight: var(--font-bold);
+  font-size: var(--text-xl);
+  min-width: 24px;
+  text-align: center;
+  transition: transform var(--duration-300) var(--ease-out);
+}
+.faq-item.active .toggle-icon { transform: rotate(180deg); }
+
+.faq-answer {
+  max-height: 0;               /* hidden by default */
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  padding: 0 var(--spacing-6);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  transition:
+    max-height var(--duration-300) var(--ease-out),
+    opacity    var(--duration-300) var(--ease-out),
+    padding    var(--duration-300) var(--ease-out);
+}
+.faq-item.active .faq-answer {
+  max-height: 500px;           /* large enough for any answer */
+  opacity: 1;
+  visibility: visible;
+  padding: var(--spacing-4) var(--spacing-6);
 }
